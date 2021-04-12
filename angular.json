@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ATM"
+    }
+  },
+  "defaultProject": "ATM",
+  "cli": {
+    "analytics": "c282930d-6b60-4dcf-9882-5983c94c0cb1"
+  }
 }
