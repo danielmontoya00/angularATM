@@ -1,11 +1,11 @@
-<div class="row">
+<div class="row header">
   <div class="col" *ngIf="rutaActual !== '/menu-principal'">
     <h2 (click)="volver()">VOLVER</h2>
   </div>
   <div class="col">
-    <h1 class="text-center">BANCO</h1>
+    <h1 class="text-center">SCOTIABANK</h1>
   </div>
   <div class="col">
-    <h2 class="text-end">SALIR</h2>
+    <h2 class="text-end" (click)="logout()">SALIR</h2>
   </div>
 </div>

@@ -2,6 +2,7 @@ import { Banco } from "./banco.model";
 import { Cliente } from "./cliente.model";
 
 export class Cuenta {
+  id: number;
   banco: Banco;
   balance: number;
   cliente: Cliente;

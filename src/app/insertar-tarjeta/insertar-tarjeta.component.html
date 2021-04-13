@@ -1,1 +1,7 @@
-<p>insertar-tarjeta works!</p>
+<form class="text-center" [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+  <img src="./assets/img/InsertCardAnimate.gif" alt="">
+  <h3>Introduce la tarjeta</h3>
+  <input type="number" maxlength="16" name="numTarjeta" formControlName="numTarjeta" required>
+
+  <button type="submit" class="button m-auto mt-5">ACEPTAR</button>
+</form>

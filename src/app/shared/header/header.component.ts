@@ -2,6 +2,7 @@ import { Location } from '@angular/common';
 import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private location: Location,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.rutaActual = this.router.url;
   }
@@ -23,6 +25,10 @@ export class HeaderComponent implements OnInit {
 
   volver() {
     this.location.back();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

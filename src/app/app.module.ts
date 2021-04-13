@@ -10,6 +10,17 @@ import { DepositarComponent } from './depositar/depositar.component';
 import { BalanceCuentaComponent } from './balance-cuenta/balance-cuenta.component';
 import { MenuPrincipalComponent } from './menu-principal/menu-principal.component';
 import { HeaderComponent } from './shared/header/header.component';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/app.reducer';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { EffectsModule } from '@ngrx/effects';
+import { EffectsArray } from './store/effects';
+import { HttpClientModule } from '@angular/common/http';
+import { RetirarEfectivoMessageComponent } from './retirar-efectivo-message/retirar-efectivo-message.component';
+import { SinFondosComponent } from './sin-fondos/sin-fondos.component';
+import { TransferenciaExitosaComponent } from './transferencia-exitosa/transferencia-exitosa.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +31,20 @@ import { HeaderComponent } from './shared/header/header.component';
     DepositarComponent,
     BalanceCuentaComponent,
     MenuPrincipalComponent,
-    HeaderComponent
+    HeaderComponent,
+    RetirarEfectivoMessageComponent,
+    SinFondosComponent,
+    TransferenciaExitosaComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(appReducers),
+    FormsModule,
+    ReactiveFormsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot(EffectsArray),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
